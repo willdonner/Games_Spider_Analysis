@@ -10,14 +10,14 @@ platform =[]
 year = []
 genre = []
 publisher = []
-sale_na = []
-sale_eu = []
-sale_jp = []
-sale_ot = []
-sale_gl = []
+sales_na = []
+sales_eu = []
+sales_jp = []
+sales_ot = []
+sales_gl = []
 
 urlhead = 'http://www.vgchartz.com/gamedb/'
-urltail = '&results=1000&name=&platform=&minSales=0&publisher=&genre=&sort=GL'
+urltail = '&results=1000&name=&platform=&minSales=0&publisher=&genre=&sort=GL?name=&publisher=&platform=&genre=&minSales=0&results=1000'
 
 for page in range(1,pages):
     real_url = urlhead + str(page) +urltail
@@ -49,11 +49,11 @@ for page in range(1,pages):
                 year.append(column4)
                 genre.append(column5)
                 publisher.append(column6)
-                sale_na.append(column7)
-                sale_eu.append(column8)
-                sale_jp.append(column9)
-                sale_row.append(column10)
-                sale_glob.append(column11)
+                sales_na.append(column7)
+                sales_eu.append(column8)
+                sales_jp.append(column9)
+                sales_ot.append(column10)
+                sales_gl.append(column11)
 
                 rec_count += 1
 
@@ -63,6 +63,6 @@ for page in range(1,pages):
 columns = {'rank': rank, 'name': game, 'platform': platform, 'year': year, 'genre': genre, 'publisher': publisher, 'NA_Sales':sales_na, 'EU_Sales': sales_eu,'JP_Sales': sales_jp,'Other_Sales':sales_ot, 'Global_Sales':sales_gl }
 print("rec_count"+str(rec_count))
 df = pd.DataFrame(columns)
-df = df[['Rank','Name','Platform','Year','Genre','Publisher','NA_Sales','EU_Sales','JP_Sales','Other_Sales','Global_Sales']]
+# df = df[['Rank','Name','Platform','Year','Genre','Publisher','NA_Sales','EU_Sales','JP_Sales','Other_Sales','Global_Sales']]
 del df.index.name
 df.to_csv("vgsales.csv",sep=",",encoding='utf-8')
