@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib
 import pandas as pd 
 
-pages = 2
+pages = 10
 rec_count =0
 rank = []
 game = []
