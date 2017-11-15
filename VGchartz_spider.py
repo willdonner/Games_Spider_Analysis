@@ -29,20 +29,20 @@ def clear_data(self):
     sales_ot.clear
     sales_gl.clear
 urlhead = 'http://www.vgchartz.com/gamedb/?page='
-urltail = '&results=186344&name=&platform=&minSales=0&publisher=&genre=&sort=GL'
-for x in range(1): 
+urltail = '&results=10000&name=&platform=&minSales=0&publisher=&genre=&sort=GL'
+for x in range(19): 
     for page in range(x+1,pages):
-        rank.clear()
-        game.clear()
-        platform.clear()
-        year.clear()
-        genre.clear()
-        publisher.clear()
-        sales_na.clear()
-        sales_eu.clear()
-        sales_jp.clear()
-        sales_ot.clear()
-        sales_gl.clear()
+        # rank.clear()
+        # game.clear()
+        # platform.clear()
+        # year.clear()
+        # genre.clear()
+        # publisher.clear()
+        # sales_na.clear()
+        # sales_eu.clear()
+        # sales_jp.clear()
+        # sales_ot.clear()
+        # sales_gl.clear()
         real_url = urlhead + str(page) +urltail
         r = urllib.request.urlopen(real_url)
         soup = BeautifulSoup(r,"lxml")
@@ -81,7 +81,7 @@ for x in range(1):
                     sales_gl.append(column11)
 
                     rec_count += 1
-                    print(rec_count)
+                    # print(rec_count)
                 except:
                     continue
         
