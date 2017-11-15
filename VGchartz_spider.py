@@ -81,6 +81,7 @@ for x in range(187):
                     sales_gl.append(column11)
 
                     rec_count += 1
+                    print(rec_count)
                 except:
                     continue
         
