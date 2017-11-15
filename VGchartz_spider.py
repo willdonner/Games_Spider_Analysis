@@ -29,8 +29,8 @@ def clear_data(self):
     sales_ot.clear
     sales_gl.clear
 urlhead = 'http://www.vgchartz.com/gamedb/?page='
-urltail = '&results=1000&name=&platform=&minSales=0&publisher=&genre=&sort=GL'
-for x in range(187): 
+urltail = '&results=186344&name=&platform=&minSales=0&publisher=&genre=&sort=GL'
+for x in range(1): 
     for page in range(x+1,pages):
         rank.clear()
         game.clear()
