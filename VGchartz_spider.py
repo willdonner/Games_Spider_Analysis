@@ -64,6 +64,7 @@ for x in range(19):
                     column10 = col[9].string.strip()
                     column11 = col[10].string.strip()
 
+                    #清除数据
                     
                     #添加数据到list中
 
@@ -80,19 +81,24 @@ for x in range(19):
                     sales_gl.append(column11)
 
                     rec_count += 1
-                    
+                    # print(rec_count)
                 except:
                     continue
         
         if page==page:
             columns = {'rank': rank, 'name': game, 'platform': platform, 'year': year, 'genre': genre, 'publisher': publisher, 'NA_Sales':sales_na, 'EU_Sales': sales_eu,'JP_Sales': sales_jp,'Other_Sales':sales_ot, 'Global_Sales':sales_gl }
-            print("rec_count"+str(rec_count))
+            print("rec_count:"+str(rec_count))
             df = pd.DataFrame(columns)
             # df = df[['Rank','Name','Platform','Year','Genre','Publisher','NA_Sales','EU_Sales','JP_Sales','Other_Sales','Global_Sales']]
             del df.index.name
             df.to_csv(str(page)+"vgsales.csv",sep=",",encoding='utf-8')
             print("save csv"+str(page))
             continue
-            
         else:
             continue
+        
+            
+           
+
+
+
