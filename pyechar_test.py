@@ -6,6 +6,7 @@ import pandas as pd
 from pyecharts import Bar
 from pyecharts import Page
 from pyecharts import Bar3D
+from pyecharts import Pie
 # str2=[]
 listkey = []
 listval = []
